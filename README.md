@@ -50,16 +50,16 @@ Here, the cut-string "!cut1 || !cut2" is used to removed the two graphical cut r
 
 ### IMPORTANT!!
 
-- User must set the variable name correctly to apply the cut in the tree; "alala" for x-axis, and "boo" for y-axis.
+- User must set the variable name correctly to apply the cut in the tree; "alala" for x-axis, and "boo" for y-axis for this example.
   ```c++
   cg->SetVarX("alala");
   cg->SetVarY("boo");
   ```
-- **Graphical cut works by cut name**, so the name should be set correctly (to "cut1" and "cut2" which is done in `ww()`).
+- **Graphical cut works by cut name**, so the name should be set correctly (to "cut1" and "cut2" which is done in `ww()` for this example).
 - Graphical cut also work with normal written cuts such as "cut1 && alala>5".
-- Graphical cut can be used inline using TCutG::IsInsde(x,y). See `draw_with_cut.C`.
-
-
+- Graphical cut can be used inline using the function `IsInsde(x,y)`. See `draw_with_cut.C`.
+- If you don't like the clicked-drawing, just end by double clicking
+  and click the graphical cut icon(scissor) to start all over again.
 
 ### Reference
 
