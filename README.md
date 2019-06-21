@@ -22,17 +22,17 @@ Now to create the graphical cut do:
    ![](https://github.com/ejungwoo/root_tcutg_example/blob/master/figures/icon.png "")
 3. Draw the region by clicking on the histogram.
    **The last click should be a double-click**
-   which will close the geometry by drawing the line to the first point.
+   which will close the geometry by drawing the line from double-clicked-point to the first point.
    ![](https://github.com/ejungwoo/root_tcutg_example/blob/master/figures/cut1.png "")
-4. By using `ww(TString name)` function defined in the make_cut.C write the graphical cut in TFile.
-   Let's choose **"cut1"** for the first one.
+4. By using example function `ww()` defined in the make_cut.C, write the graphical cut.
+   Let's choose **"cut1"** for the first graphical cut name.
    ```c++
    [] ww("cut1")
    ```
-   By doing this, the function finds the primitive name CUTG 
-   (which is the name of the drawing we just made) in the current TPad(gPad)
-   and change the name into **"cut1"** and save it in the TFile **"cut1."**.
-5. Do same for the second cut with name **"cut2"** (by repeaing step 3. and 4.) and quit.
+   By doing this, the function `ww()` finds the primitive name CUTG 
+   (which is the name of the clicked-drawing we just made) in the current TPad(gPad)
+   and change the name into **"cut1"** and save it in the TFile **"cut1.root"**.
+5. Do same for the second cut with name **"cut2"** (by repeating the step 2 to 4) and quit.
    ![](https://github.com/ejungwoo/root_tcutg_example/blob/master/figures/cut2.png "")
    ```c++
    [] ww("cut2")
@@ -45,6 +45,7 @@ Run `draw_with_cut.C` to draw with graphical cuts.
 ```bash
 root draw_with_cut.C
 ```
+Here, the cut-string "!cut1 || !cut2" is used to removed the two graphical cut regions.
 ![](https://github.com/ejungwoo/root_tcutg_example/blob/master/figures/result.png "")
 
 ### IMPORTANT!!
